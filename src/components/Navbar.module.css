@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(75rem, calc(100% - 2rem));
+  height: 3.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 12px 32px rgba(34, 28, 78, 0.12);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+
+.brand,
+.navLinks,
+.navTools,
+.navButton,
+.iconButton {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 0.4rem;
+  color: var(--primary);
+  font-weight: 800;
+  padding-inline: 1.1rem;
+}
+
+.brandIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.navLinks {
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navButton,
+.iconButton {
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.navButton {
+  padding-inline: 1rem;
+  font-weight: 700;
+}
+
+.navButton:hover,
+.iconButton:hover {
+  background: rgba(0, 0, 0, 0.055);
+  color: var(--primary);
+}
+
+.navButton:active,
+.iconButton:active {
+  transform: scale(0.98);
+}
+
+.externalMark {
+  margin-left: 0.35rem;
+  color: var(--text-50);
+  font-size: 0.8rem;
+}
+
+.navTools {
+  gap: 0.25rem;
+}
+
+.iconButton {
+  justify-content: center;
+  width: 2.75rem;
+  border: 0;
+  color: var(--text-75);
+  background: transparent;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    top: 0.65rem;
+    width: calc(100% - 1rem);
+    grid-template-columns: 1fr auto;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}

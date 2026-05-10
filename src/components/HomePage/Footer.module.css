@@ -1,0 +1,29 @@
+.footer {
+  color: var(--text-50);
+  text-align: center;
+  font-size: 0.9rem;
+  animation: footerFadeIn 260ms ease 190ms both;
+}
+
+@keyframes footerFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.footerLine {
+  width: calc(100% - 10rem);
+  max-width: 28rem;
+  margin: 2.5rem auto 1rem;
+  border-top: 0;
+}
+
+
+.footer a {
+  color: var(--primary);
+  font-weight: 700;
+}

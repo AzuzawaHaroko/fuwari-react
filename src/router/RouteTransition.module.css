@@ -1,0 +1,16 @@
+.routeTransition {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  filter: blur(6px);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease,
+    filter 260ms ease;
+  will-change: opacity, transform, filter;
+}
+
+.entered {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

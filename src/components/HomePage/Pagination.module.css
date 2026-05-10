@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 1rem 0 0.25rem;
+  animation: paginationFadeUp 260ms ease 170ms both;
+}
+
+@keyframes paginationFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pageCurrent,
+.pageButton {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 0.75rem;
+  color: var(--primary);
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px) saturate(1.35);
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+
+.pageCurrent {
+  color: white;
+  background: var(--primary);
+  font-size: 1rem;
+}
+
+.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}

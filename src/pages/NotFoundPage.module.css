@@ -1,0 +1,50 @@
+.card {
+  border: 0;
+  border-radius: 1.15rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px) saturate(1.35);
+  animation: cardFadeUp 260ms ease 40ms both;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  background: var(--card-strong);
+  box-shadow: none;
+}
+
+
+.card h1 {
+  margin: 0 0 0.75rem;
+  color: var(--text-90);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  font-weight: 850;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-75);
+  line-height: 1.65;
+}
+
+.card a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.25rem;
+  color: var(--primary);
+  font-weight: 800;
+}
