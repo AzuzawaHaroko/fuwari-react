@@ -1,28 +1,42 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage.jsx'
+import { AboutPage } from '../pages/AboutPage.jsx'
 import { NotFoundPage } from '../pages/NotFoundPage.jsx'
 import styles from './RouteTransition.module.css'
 
-export function AppRoutes() {
-  const location = useLocation()
+function RouteTransition({ children }) {
   const [entered, setEntered] = useState(false)
 
-  useLayoutEffect(() => {
-    setEntered(false)
-    const timer = window.setTimeout(() => {
-      setEntered(true)
-    }, 20)
+  useEffect(() => {
+    const firstFrame = requestAnimationFrame(() => {
+      const secondFrame = requestAnimationFrame(() => {
+        setEntered(true)
+      })
 
-    return () => window.clearTimeout(timer)
-  }, [location.pathname])
+      return () => cancelAnimationFrame(secondFrame)
+    })
+
+    return () => cancelAnimationFrame(firstFrame)
+  }, [])
 
   return (
-    <div className={`${styles.routeTransition} ${entered ? styles.entered : ''}`} key={location.pathname}>
+    <div className={`${styles.routeTransition} ${entered ? styles.entered : ''}`}>
+      {children}
+    </div>
+  )
+}
+
+export function AppRoutes() {
+  const location = useLocation()
+
+  return (
+    <RouteTransition key={location.key}>
       <Routes location={location}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </RouteTransition>
   )
 }

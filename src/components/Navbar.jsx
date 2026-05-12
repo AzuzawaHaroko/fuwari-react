@@ -31,10 +31,10 @@ export function Navbar({ siteName, navItems }) {
         ))}
       </nav>
 
-      <div className={styles.navTools} aria-label="Tools">
+      {/* <div className={styles.navTools} aria-label="Tools">
         <button className={styles.iconButton} aria-label="Search">S</button>
         <button className={styles.iconButton} aria-label="Toggle theme">T</button>
-      </div>
+      </div> */}
     </header>
   )
 }

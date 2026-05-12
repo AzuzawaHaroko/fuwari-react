@@ -41,7 +41,19 @@
   background: var(--card-bg);
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
-  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.backToTop svg {
+  width: 2.3rem;
+  height: 2.3rem;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 980px) {

@@ -26,7 +26,9 @@ export default function App() {
       </main>
 
       <button className={styles.backToTop} aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        ^
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M8 14l4-4 4 4" />
+        </svg>
       </button>
       <FloatingScrollbar />
     </div>

@@ -1,5 +1,6 @@
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.65rem;
   margin: 1rem 0 0.25rem;
@@ -18,30 +19,56 @@
   }
 }
 
-.pageCurrent,
-.pageButton {
+.pageButton,
+.pageEllipsis {
   display: grid;
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
+}
+
+.pageButton {
   border: 0;
   border-radius: 0.75rem;
   color: var(--primary);
   background: var(--card-bg);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px) saturate(1.35);
-  font-size: 1.55rem;
+  cursor: pointer;
+  font: inherit;
   font-weight: 800;
+  transition: background 160ms ease, color 160ms ease, opacity 160ms ease;
 }
 
+.pageButton svg {
+  width: 1.55rem;
+  height: 1.55rem;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pageButton:hover:not(:disabled):not(.pageCurrent) {
+  background: var(--card-strong);
+}
 
 .pageCurrent {
   color: white;
   background: var(--primary);
   font-size: 1rem;
+  cursor: default;
 }
 
-.disabled {
+.pageEllipsis {
+  color: var(--text-50);
+  font-weight: 800;
+}
+
+.pageButton:disabled {
   opacity: 0.45;
-  pointer-events: none;
+  cursor: default;
 }

@@ -34,10 +34,14 @@
   display: grid;
   place-items: center;
   color: white;
-  font-size: 2.25rem;
   opacity: 0;
   background: rgba(0, 0, 0, 0.36);
   transition: opacity 180ms ease;
+}
+
+.avatarMask img {
+  width: 3.2rem;
+  height: auto;
 }
 
 .avatarLink:hover .avatarMask {
@@ -46,8 +50,8 @@
 
 .profileCard h1 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .profileCard p,
@@ -69,10 +73,32 @@
   place-items: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 0.65rem;
+  border-radius: 50%;
   color: var(--primary);
   background: var(--primary-soft);
   font-weight: 800;
+}
+
+.socialRow img {
+  display: block;
+  width: 1.12rem;
+  height: 1.12rem;
+}
+
+.socialRow .githubIcon {
+  width: 1.13rem;
+  height: 1.13rem;
+}
+
+.socialRow .bilibiliIcon {
+  width: 1.22rem;
+  height: 1.22rem;
+  transform: translateY(0.02rem);
+}
+
+.socialRow .xIcon {
+  width: 1.06rem;
+  height: 1.06rem;
 }
 
 .linkList,
@@ -91,7 +117,7 @@
   padding: 0.45rem 0.65rem;
   border-radius: 0.75rem;
   color: var(--text-75);
-  font-weight: 700;
+  font-weight: 600;
   transition: background 160ms ease, color 160ms ease;
 }
 

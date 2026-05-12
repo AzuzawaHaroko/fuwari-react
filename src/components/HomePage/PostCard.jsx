@@ -4,25 +4,24 @@ import styles from './PostCard.module.css'
 
 export function PostCard({ post }) {
   return (
-    <article className={`${styles.postCard} ${post.cover ? styles.hasCover : ''}`}>
+    <Link className={`${styles.postCard} ${post.cover ? styles.hasCover : ''}`} to={post.href}>
       {post.cover && (
-        <Link className={styles.postCover} to={post.href} aria-label={post.title}>
+        <div className={styles.postCover}>
           <img src={post.cover} alt={`Cover Image of ${post.title}`} />
-        </Link>
+        </div>
       )}
 
       <div className={styles.postBody}>
-        <Link className={styles.postTitle} to={post.href}>
+        <h2 className={styles.postTitle}>
           {post.title}
-          <span>&gt;</span>
-        </Link>
+        </h2>
 
         <div className={styles.postMeta} aria-label="Post metadata">
           <span>* {post.date}</span>
-          <Link to={`/archive/?category=${post.category}`}>[] {post.category}</Link>
+          <span>[] {post.category}</span>
           <span className={styles.postTags}>
             # {post.tags.map((tag) => (
-              <Link key={tag} to={`/archive/?tag=${tag}`}>{tag}</Link>
+              <span key={tag}>{tag}</span>
             ))}
           </span>
         </div>
@@ -36,7 +35,11 @@ export function PostCard({ post }) {
         </div>
       </div>
 
-      <Link className={styles.enterButton} to={post.href} aria-label={post.title}>&gt;</Link>
-    </article>
+      <div className={styles.enterButton} aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M10 7l5 5-5 5" />
+        </svg>
+      </div>
+    </Link>
   )
 }

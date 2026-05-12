@@ -6,7 +6,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerLine} />
       <p>
-        (c) 2026 Lorem Ipsum. All Rights Reserved. / <a href="/rss.xml">RSS</a> / <a href="/sitemap-index.xml">Sitemap</a>
+        (c) 2026 Haroko. All Rights Reserved. / <a href="/rss.xml">RSS</a> / <a href="/sitemap-index.xml">Sitemap</a>
         <br />
         Powered by <a href="https://vite.dev" target="_blank" rel="noreferrer">Vite</a> & <a href="https://react.dev" target="_blank" rel="noreferrer">React</a>
       </p>
